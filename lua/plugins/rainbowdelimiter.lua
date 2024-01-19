@@ -31,8 +31,5 @@ return {
         vim.api.nvim_set_hl(0, "RainbowDelimiterGreen", { link = "@string" })
         vim.api.nvim_set_hl(0, "RainbowDelimiterViolet", { link = "@attribute" })
         vim.api.nvim_set_hl(0, "RainbowDelimiterCyan", { link = "@conceal" })
-
-        vim.api.nvim_set_hl(0, "NeotreeDirectoryIcon", { link = "Directory" })
-        vim.api.nvim_set_hl(0, "NeotreeRootName", { link = "Directory" })
     end,
 }
