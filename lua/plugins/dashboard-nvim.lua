@@ -49,7 +49,7 @@ return {
                     },
                 },
                 project = {
-                    enable = true,
+                    enable = false,
                     limit = 8,
                     icon = "Recent files:",
                     label = "",
