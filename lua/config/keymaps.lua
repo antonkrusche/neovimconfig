@@ -26,3 +26,8 @@ vim.api.nvim_set_keymap("n", "<leader><tab>k", ":+tabmove<CR>", {
     desc = "Move tab to next pos",
     noremap = true,
 })
+
+vim.api.nvim_set_keymap("n", "<leader>fp", ":CdProject<CR>", {
+    desc = "Find project",
+    noremap = true,
+})
