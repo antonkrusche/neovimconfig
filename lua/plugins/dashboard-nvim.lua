@@ -51,11 +51,11 @@ return {
                 project = {
                     enable = false,
                     limit = 8,
-                    icon = "Recent files:",
+                    icon = "Recent projects:",
                     label = "",
                     action = "Telescope find_files cwd=",
                 },
-                mru = { limit = 20, icon = "your icon", label = "", cwd_only = false },
+                mru = { limit = 20, icon = "Recent files:", label = "", cwd_only = false },
             },
         }
 

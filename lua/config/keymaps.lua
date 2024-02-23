@@ -31,3 +31,8 @@ vim.api.nvim_set_keymap("n", "<leader>fp", ":CdProject<CR>", {
     desc = "Find project",
     noremap = true,
 })
+
+vim.api.nvim_set_keymap("n", "<leader>ct", ":UndotreeToggle<CR>", {
+    desc = "Open undo tree",
+    noremap = true,
+})
