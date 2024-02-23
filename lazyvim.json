@@ -2,8 +2,7 @@
   "extras": [
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.lang.clangd",
-    "lazyvim.plugins.extras.test.core",
-    "lazyvim.plugins.extras.util.project"
+    "lazyvim.plugins.extras.test.core"
   ],
   "news": {
     "NEWS.md": "2191"
