@@ -38,6 +38,17 @@ vim.api.nvim_set_keymap("n", "<S-h>", ":tabp<CR>", {
     silent = true,
 })
 
+vim.api.nvim_set_keymap("n", "<C-n>", ":bnext<CR>", {
+    desc = "Next buffer",
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap("n", "<C-p>", ":bprev<CR>", {
+    desc = "Previous buffer",
+    noremap = true,
+    silent = true,
+})
+
 vim.api.nvim_set_keymap("n", "<leader>fp", ":CdProject<CR>", {
     desc = "Find project",
     noremap = true,
