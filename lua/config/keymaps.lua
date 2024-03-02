@@ -4,6 +4,14 @@
 vim.keymap.del("n", "<leader><tab>]")
 vim.keymap.del("n", "<leader><tab>[")
 
+vim.api.nvim_set_keymap("n", "ö", "[", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "öö", "[[", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "ä", "]", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "ää", "]]", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "Ö", "{", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "Ä", "}", { noremap = false, silent = true })
+
+-- tab related keymaps
 vim.api.nvim_set_keymap("n", "<leader><tab>o", ":tabonly<CR>", {
     desc = "Close all other tabs",
     noremap = true,
@@ -16,17 +24,14 @@ vim.api.nvim_set_keymap("n", "<leader><tab>h", ":tabp<CR>", {
     desc = "Previous tab",
     noremap = true,
 })
--- move current tab to previous position
 vim.api.nvim_set_keymap("n", "<leader><tab>j", ":-tabmove<CR>", {
     desc = "Move tab to previous pos",
     noremap = true,
 })
--- move current tab to next position
 vim.api.nvim_set_keymap("n", "<leader><tab>k", ":+tabmove<CR>", {
     desc = "Move tab to next pos",
     noremap = true,
 })
-
 vim.api.nvim_set_keymap("n", "<S-l>", ":tabn<CR>", {
     desc = "Next tab",
     noremap = true,
@@ -38,6 +43,7 @@ vim.api.nvim_set_keymap("n", "<S-h>", ":tabp<CR>", {
     silent = true,
 })
 
+-- buffer related keymaps
 vim.api.nvim_set_keymap("n", "<C-n>", ":bnext<CR>", {
     desc = "Next buffer",
     noremap = true,
@@ -49,6 +55,7 @@ vim.api.nvim_set_keymap("n", "<C-p>", ":bprev<CR>", {
     silent = true,
 })
 
+-- plugin related keymaps
 vim.api.nvim_set_keymap("n", "<leader>fp", ":CdProject<CR>", {
     desc = "Find project",
     noremap = true,
