@@ -7,5 +7,3 @@ foo.*
 *.log
 data
 cd-project.nvim.json
-lazyvim.json
-lazy-lock.json
