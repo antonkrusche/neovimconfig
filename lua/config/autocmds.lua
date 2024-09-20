@@ -4,17 +4,17 @@
 --
 
 -- Disable autoformat for cpp and h files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "cpp" },
-    callback = function()
-        vim.b.autoformat = false
-    end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--    pattern = { "cpp" },
+--    callback = function()
+--        vim.b.autoformat = false
+--    end,
+--})
 
--- Disable autoformat for cpp and h files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "python" },
-    callback = function()
-        vim.b.autoformat = false
-    end,
-})
+-- Disable autoformat for python
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--     pattern = { "python" },
+--     callback = function()
+--         vim.b.autoformat = false
+--     end,
+-- })
