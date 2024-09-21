@@ -3,7 +3,7 @@ return {
     {
         "sainnhe/gruvbox-material",
         "sainnhe/everforest",
-        "shaunsingh/nord.nvim",
+        "AlexvZyl/nordic.nvim",
     },
 
     {
