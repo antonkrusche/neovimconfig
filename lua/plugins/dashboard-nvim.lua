@@ -59,7 +59,7 @@ return {
                     limit = 8,
                     icon = "Recent projects:",
                     label = "",
-                    action = "Telescope find_files cwd=",
+                    action = "FzfLua files",
                 },
                 mru = { limit = 20, icon = "Recent files:", label = "", cwd_only = false },
             },
