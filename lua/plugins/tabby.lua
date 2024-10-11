@@ -21,7 +21,7 @@ return {
                     return {
                         line.sep("", hl, theme.fill),
                         tab.is_current() and "" or "󰆣",
-                        tab.number(),
+                        tab.in_jump_mode() and tab.jump_key() or tab.number(),
                         tab.name(),
                         tab.wins().foreach(function(win)
                             return { win.buf().is_changed() and "󰝒 " or "" }

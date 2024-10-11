@@ -1,6 +1,6 @@
 local function check_modified()
-    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-        if vim.api.nvim_buf_get_option(buf, "modified") then
+    for _, curr_buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_get_option_value("modified", { buf = curr_buf }) then
             return "Unsaved buffers" -- any message or icon
         end
     end

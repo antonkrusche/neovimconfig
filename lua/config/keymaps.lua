@@ -8,9 +8,7 @@ vim.keymap.del("n", "<leader><tab>[")
 
 -- Compensate for german keyboard
 vim.api.nvim_set_keymap("n", "ö", "[", { noremap = false, silent = true })
-vim.api.nvim_set_keymap("n", "öö", "[[", { noremap = false, silent = true })
 vim.api.nvim_set_keymap("n", "ä", "]", { noremap = false, silent = true })
-vim.api.nvim_set_keymap("n", "ää", "]]", { noremap = false, silent = true })
 vim.api.nvim_set_keymap("n", "Ö", "{", { noremap = false, silent = true })
 vim.api.nvim_set_keymap("n", "Ä", "}", { noremap = false, silent = true })
 
