@@ -5,7 +5,14 @@ return {
         "sainnhe/everforest",
         "AlexvZyl/nordic.nvim",
     },
-
+    {
+        "folke/tokyonight.nvim",
+        enabled = false,
+    },
+    {
+        "catppuccin/nvim",
+        enabled = false,
+    },
     {
         "LazyVim/LazyVim",
         opts = {
