@@ -5,10 +5,11 @@
     "lazyvim.plugins.extras.coding.neogen",
     "lazyvim.plugins.extras.editor.inc-rename",
     "lazyvim.plugins.extras.lang.clangd",
-    "lazyvim.plugins.extras.ui.dashboard-nvim"
+    "lazyvim.plugins.extras.ui.dashboard-nvim",
+    "lazyvim.plugins.extras.editor.neo-tree"
   ],
   "news": {
-    "NEWS.md": "10960"
+    "NEWS.md": "11229"
   },
   "version": 8
 }
