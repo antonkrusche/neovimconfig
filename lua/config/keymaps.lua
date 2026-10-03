@@ -44,12 +44,6 @@ vim.api.nvim_set_keymap("n", "<S-h>", ":tabp<CR>", {
     silent = true,
 })
 
--- plugin related keymaps
-vim.api.nvim_set_keymap("n", "<leader>fp", ":CdProject<CR>", {
-    desc = "Find project",
-    noremap = true,
-})
-
 local function copy_code_reference(include_code)
     local bufnr = vim.api.nvim_get_current_buf()
     local file = vim.api.nvim_buf_get_name(bufnr)
