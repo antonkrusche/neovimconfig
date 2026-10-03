@@ -6,13 +6,13 @@ return {
             ---@type lspconfig.options
             servers = {
                 lua_ls = {
-                    mason = false, -- set to false if you don't want this server to be installed with mason
+                    mason = true, -- set to false if you don't want this server to be installed with mason
                 },
                 clangd = {
-                    mason = false,
+                    mason = true,
                 },
                 pylsp = {
-                    mason = false,
+                    mason = true,
                 },
             },
         },
