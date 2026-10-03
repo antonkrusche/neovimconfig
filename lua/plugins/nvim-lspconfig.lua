@@ -2,8 +2,6 @@ return {
     {
         "neovim/nvim-lspconfig",
         opts = {
-            -- add any global capabilities here
-            capabilities = {},
             -- LSP Server Settings
             ---@type lspconfig.options
             servers = {
