@@ -44,14 +44,6 @@ vim.api.nvim_set_keymap("n", "<S-h>", ":tabp<CR>", {
     silent = true,
 })
 
--- Accelerated navigation keymaps
-vim.keymap.set({ "n", "x", "o" }, "<C-h>", "^")
-vim.keymap.set({ "n", "x", "o" }, "<C-l>", "$")
-vim.keymap.set({ "n", "x", "o" }, "<C-j>", "6jzz")
-vim.keymap.set({ "n", "x", "o" }, "<C-k>", "6kzz")
-vim.keymap.set({ "n", "x", "o" }, "<C-u>", "<C-u>zz")
-vim.keymap.set({ "n", "x", "o" }, "<C-d>", "<C-d>zz")
-
 -- plugin related keymaps
 vim.api.nvim_set_keymap("n", "<leader>fp", ":CdProject<CR>", {
     desc = "Find project",
