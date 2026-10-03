@@ -57,3 +57,46 @@ vim.api.nvim_set_keymap("n", "<leader>fp", ":CdProject<CR>", {
     desc = "Find project",
     noremap = true,
 })
+
+local function copy_code_reference(include_code)
+    local bufnr = vim.api.nvim_get_current_buf()
+    local file = vim.api.nvim_buf_get_name(bufnr)
+    if file == "" then
+        vim.notify("Code ref: buffer has no file name", vim.log.levels.WARN)
+        return
+    end
+
+    -- Anchor (<) and cursor (.) of the visual selection, in line order.
+    local a, b = vim.fn.getpos("v")[2], vim.fn.getpos(".")[2]
+    local s, e = math.min(a, b), math.max(a, b)
+
+    -- Path relative to the current working directory, when possible.
+    local rel = vim.fn.fnamemodify(file, ":.")
+
+    local block
+    if include_code then
+        local lines = vim.api.nvim_buf_get_lines(bufnr, s - 1, e, false)
+        block = string.format(
+            "Reference: %s (lines %d-%d)\n```%s\n%s\n```\n",
+            rel,
+            s,
+            e,
+            vim.bo[bufnr].filetype,
+            table.concat(lines, "\n")
+        )
+    else
+        block = string.format("Reference: %s:%d-%d\n", rel, s, e)
+    end
+
+    vim.fn.setreg("+", block)
+    vim.fn.setreg('"', block)
+    vim.notify(string.format("Copied ref: %s:%d-%d", rel, s, e))
+end
+
+vim.keymap.set("x", "<leader>cr", function()
+    copy_code_reference(false)
+end, { desc = "pi: copy selection reference" })
+
+vim.keymap.set("x", "<leader>cR", function()
+    copy_code_reference(true)
+end, { desc = "pi: copy selection reference + code" })
