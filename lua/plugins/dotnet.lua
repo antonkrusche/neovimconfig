@@ -27,6 +27,15 @@ return {
         opts = {
             servers = {
                 omnisharp = {
+                    handlers = {
+                        -- Route implementations through omnisharp-extended so that
+                        -- `gI` (Goto Implementation, LazyVim default) resolves
+                        -- metadata / source-generated locations, like Visual Studio.
+                        -- The dotnet extra wires this only for definitions.
+                        ["textDocument/implementation"] = function(...)
+                            return require("omnisharp_extended").implementation_handler(...)
+                        end,
+                    },
                     settings = {
                         FormattingOptions = {
                             -- Read formatting, code style and naming rules from
