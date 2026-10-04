@@ -7,42 +7,19 @@ vim.keymap.del("n", "<leader><tab>]")
 vim.keymap.del("n", "<leader><tab>[")
 
 -- Compensate for german keyboard
-vim.api.nvim_set_keymap("n", "ö", "[", { noremap = false, silent = true })
-vim.api.nvim_set_keymap("n", "ä", "]", { noremap = false, silent = true })
-vim.api.nvim_set_keymap("n", "Ö", "{", { noremap = false, silent = true })
-vim.api.nvim_set_keymap("n", "Ä", "}", { noremap = false, silent = true })
+vim.keymap.set("n", "ö", "[", { remap = true, silent = true })
+vim.keymap.set("n", "ä", "]", { remap = true, silent = true })
+vim.keymap.set("n", "Ö", "{", { remap = true, silent = true })
+vim.keymap.set("n", "Ä", "}", { remap = true, silent = true })
 
 -- tab related keymaps
-vim.api.nvim_set_keymap("n", "<leader><tab>o", ":tabonly<CR>", {
-    desc = "Close all other tabs",
-    noremap = true,
-})
-vim.api.nvim_set_keymap("n", "<leader><tab>l", ":tabn<CR>", {
-    desc = "Next tab",
-    noremap = true,
-})
-vim.api.nvim_set_keymap("n", "<leader><tab>h", ":tabp<CR>", {
-    desc = "Previous tab",
-    noremap = true,
-})
-vim.api.nvim_set_keymap("n", "<leader><tab>j", ":-tabmove<CR>", {
-    desc = "Move tab to previous pos",
-    noremap = true,
-})
-vim.api.nvim_set_keymap("n", "<leader><tab>k", ":+tabmove<CR>", {
-    desc = "Move tab to next pos",
-    noremap = true,
-})
-vim.api.nvim_set_keymap("n", "<S-l>", ":tabn<CR>", {
-    desc = "Next tab",
-    noremap = true,
-    silent = true,
-})
-vim.api.nvim_set_keymap("n", "<S-h>", ":tabp<CR>", {
-    desc = "Previous tab",
-    noremap = true,
-    silent = true,
-})
+vim.keymap.set("n", "<leader><tab>o", ":tabonly<CR>", { desc = "Close all other tabs" })
+vim.keymap.set("n", "<leader><tab>l", ":tabn<CR>", { desc = "Next tab" })
+vim.keymap.set("n", "<leader><tab>h", ":tabp<CR>", { desc = "Previous tab" })
+vim.keymap.set("n", "<leader><tab>j", ":-tabmove<CR>", { desc = "Move tab to previous pos" })
+vim.keymap.set("n", "<leader><tab>k", ":+tabmove<CR>", { desc = "Move tab to next pos" })
+vim.keymap.set("n", "<S-l>", ":tabn<CR>", { desc = "Next tab", silent = true })
+vim.keymap.set("n", "<S-h>", ":tabp<CR>", { desc = "Previous tab", silent = true })
 
 local function copy_code_reference(include_code)
     local bufnr = vim.api.nvim_get_current_buf()

@@ -29,7 +29,7 @@ return {
                 {
                     desc = " recent files",
                     group = "Yellow",
-                    action = "Snacks.picker.recent()",
+                    action = "lua Snacks.picker.recent()",
                     key = "o",
                 },
                 {
