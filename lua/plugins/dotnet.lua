@@ -34,13 +34,13 @@ return {
             -- `roslyn` is not in the core Mason registry; the custom registry
             -- provides it (plus `roslyn-nightly`). `roslyn` tracks the version
             -- shipped with the VS Code C# extension.
-            registries = {
-                "github:mason-org/mason-registry",
-                "github:Crashdummyy/mason-registry",
-            },
+            -- registries = {
+            --     "github:mason-org/mason-registry",
+            --     "github:Crashdummyy/mason-registry",
+            -- },
             -- Installs the `roslyn` package, which provides the
             -- `roslyn-language-server` executable that roslyn.nvim auto-detects.
-            ensure_installed = { "roslyn" },
+            -- ensure_installed = { "roslyn" },
         },
     },
     {
