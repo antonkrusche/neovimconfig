@@ -20,6 +20,6 @@ vim.o.showtabline = 2
 vim.g.gruvbox_material_background = "soft"
 vim.g.gruvbox_material_better_performance = 1
 
-vim.g.lazyvim_picker = "snacks"
+vim.g.lazyvim_picker = "auto"
 
 vim.opt.shell = "bash"
