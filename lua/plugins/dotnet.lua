@@ -1,8 +1,14 @@
--- C#: full .editorconfig support
+-- C# setup
 --
--- On-save formatting is handled by OmniSharp's Roslyn formatter, which
--- honors the entire project .editorconfig (formatting, code style, naming
--- conventions, analyzers)
+-- Primary language server: Roslyn (Microsoft.CodeAnalysis.LanguageServer),
+-- the same server used by VS Code / Visual Studio, wired up through
+-- seblyng/roslyn.nvim. It is considerably faster and more accurate on large
+-- solutions than OmniSharp, handles multiple solutions, decompilation and
+-- source-generated files natively (so omnisharp-extended is no longer needed).
+--
+-- On-save formatting is handled by the Roslyn server's formatter, which honors
+-- the entire project .editorconfig (formatting, code style, naming conventions,
+-- analyzers).
 --
 -- CSharpier, the LazyVim dotnet extra default, is disabled here: it is
 -- opinionated and only respects a small subset of .editorconfig (indent
@@ -23,10 +29,37 @@ return {
         },
     },
     {
+        "mason-org/mason.nvim",
+        opts = {
+            -- `roslyn` is not in the core Mason registry; the custom registry
+            -- provides it (plus `roslyn-nightly`). `roslyn` tracks the version
+            -- shipped with the VS Code C# extension.
+            registries = {
+                "github:mason-org/mason-registry",
+                "github:Crashdummyy/mason-registry",
+            },
+            -- Installs the `roslyn` package, which provides the
+            -- `roslyn-language-server` executable that roslyn.nvim auto-detects.
+            ensure_installed = { "roslyn" },
+        },
+    },
+    {
+        "seblyng/roslyn.nvim",
+        ft = "cs",
+        opts = {
+            -- Uncomment if the solution lives in a parent directory and your
+            -- files are not below the folder that contains it.
+            -- broad_search = true,
+        },
+    },
+    {
         "neovim/nvim-lspconfig",
         opts = {
             servers = {
                 omnisharp = {
+                    -- Disabled in favour of Roslyn. Flip to `true` to fall back
+                    -- to OmniSharp; the settings/handlers below then apply again.
+                    enabled = false,
                     handlers = {
                         -- Route implementations through omnisharp-extended so that
                         -- `gI` (Goto Implementation, LazyVim default) resolves
