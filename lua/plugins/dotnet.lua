@@ -40,7 +40,7 @@ return {
             -- },
             -- Installs the `roslyn` package, which provides the
             -- `roslyn-language-server` executable that roslyn.nvim auto-detects.
-            -- ensure_installed = { "roslyn" },
+            ensure_installed = { "roslyn-language-server" },
         },
     },
     {
