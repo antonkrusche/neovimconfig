@@ -22,4 +22,8 @@ vim.g.gruvbox_material_better_performance = 1
 
 vim.g.lazyvim_picker = "auto"
 
-vim.opt.shell = "bash"
+if vim.fn.has("win32") == 0 then
+    vim.opt.shell = "fish"
+else
+    vim.opt.shell = "bash"
+end
