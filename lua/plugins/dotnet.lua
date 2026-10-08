@@ -56,6 +56,9 @@ return {
         "neovim/nvim-lspconfig",
         opts = {
             servers = {
+                roslyn_ls = {
+                    enabled = false,
+                },
                 omnisharp = {
                     -- Disabled in favour of Roslyn. Flip to `true` to fall back
                     -- to OmniSharp; the settings/handlers below then apply again.
